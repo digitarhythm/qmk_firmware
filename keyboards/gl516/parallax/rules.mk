@@ -7,10 +7,15 @@ EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # Enable N-Key Rollover
+
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
-RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
+
 AUDIO_ENABLE = no           # Audio output
 
+GRAVE_ESC_ENABLE = yes
+#ENCODER_ENABLE = yes
+
 CUSTOM_MATRIX = lite
+DEBOUNCE_TYPE = sym_eager_pk
 
 SRC += matrix.c
