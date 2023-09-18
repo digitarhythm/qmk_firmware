@@ -17,6 +17,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "matrix.h"
 #include "quantum.h"
 
+#if (MATRIX_COLS <= 8)
+#    define print_matrix_header()  print("\nr/c 01234567\n")
+#    define print_matrix_row(row)  print_bin_reverse8(matrix_get_row(row))
+#    define matrix_bitpop(i)       bitpop(matrix[i])
+#    define ROW_SHIFTER ((uint8_t)1)
+#elif (MATRIX_COLS <= 16)
+#    define print_matrix_header()  print("\nr/c 0123456789ABCDEF\n")
+#    define print_matrix_row(row)  print_bin_reverse16(matrix_get_row(row))
+#    define matrix_bitpop(i)       bitpop16(matrix[i])
+#    define ROW_SHIFTER ((uint16_t)1)
+#elif (MATRIX_COLS <= 32)
+#    define print_matrix_header()  print("\nr/c 0123456789ABCDEF0123456789ABCDEF\n")
+#    define print_matrix_row(row)  print_bin_reverse32(matrix_get_row(row))
+#    define matrix_bitpop(i)       bitpop32(matrix[i])
+#    define ROW_SHIFTER  ((uint32_t)1)
+#endif
+
 static const pin_t row_pins[MATRIX_ROWS] = MATRIX_ROW_PINS;
 static const pin_t col_pins[MATRIX_COLS] = MATRIX_COL_PINS;
 
@@ -77,7 +94,7 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 
     // Select row and wait for row selecton to stabilize
     select_row(current_row);
-    matrix_io_delay();
+    wait_us(30);
 
     // For each col...
     for(uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++) {
@@ -86,7 +103,7 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
         uint8_t pin_state = readPin(col_pins[col_index]);
 
         // Populate the matrix row with the state of the col pin
-        current_matrix[current_row] |=  pin_state ? 0 : (MATRIX_ROW_SHIFTER << col_index);
+        current_matrix[current_row] |=  pin_state ? 0 : (ROW_SHIFTER << col_index);
     }
 
     // Unselect row
@@ -101,7 +118,7 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
 
     // Select col and wait for col selecton to stabilize
     select_col(current_col);
-    matrix_io_delay();
+    wait_us(30);
 
     // For each row...
     for(uint8_t row_index = 0; row_index < MATRIX_ROWS/2; row_index++)
@@ -114,12 +131,12 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
         if (readPin(row_pins[row_index]) == 0)
         {
             // Pin LO, set col bit
-            current_matrix[tmp] |= (MATRIX_ROW_SHIFTER << current_col);
+            current_matrix[tmp] |= (ROW_SHIFTER << current_col);
         }
         else
         {
             // Pin HI, clear col bit
-            current_matrix[tmp] &= ~(MATRIX_ROW_SHIFTER << current_col);
+            current_matrix[tmp] &= ~(ROW_SHIFTER << current_col);
         }
 
         // Determine if the matrix changed state
@@ -154,5 +171,5 @@ bool matrix_scan_custom(matrix_row_t current_matrix[])
     changed |= read_rows_on_col(current_matrix, current_col);
   }
   
-  return changed;
+  return (uint8_t)changed;
 }
