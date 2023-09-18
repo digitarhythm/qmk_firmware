@@ -13,7 +13,7 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 AUDIO_ENABLE = no           # Audio output
 
 GRAVE_ESC_ENABLE = yes
-#ENCODER_ENABLE = yes
+ENCODER_ENABLE = yes
 
 CUSTOM_MATRIX = lite
 DEBOUNCE_TYPE = sym_eager_pk
