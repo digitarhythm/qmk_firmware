@@ -18,14 +18,14 @@
 
 /* Select hand configuration */
 
-#define QUICK_TAP_TERM 0
-#define TAPPING_TERM 180
+#define TAPPING_TERM 160
+#define HOLD_ON_OTHER_KEY_PRESS
 
 #ifdef RGBLED_NUM
   #undef RGBLED_NUM
 #endif
 
-#define RGB_MATRIX_LED_COUNT 48
+#define RGB_MATRIX_LED_COUNT 42
 
 #ifdef RGB_MATRIX_ENABLE
   #define RGB_MATRIX_KEYPRESSES // reacts to keypresses

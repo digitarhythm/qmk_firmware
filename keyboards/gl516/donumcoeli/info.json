@@ -9,7 +9,6 @@
     "device_version": "0.0.1"
   },
   "rgb_matrix": {
-    "rgb_matrix_maximum_brightness": 127,
     "driver": "ws2812"
   },
   "ws2812": {

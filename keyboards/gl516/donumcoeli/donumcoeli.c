@@ -28,9 +28,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { NO_LED,      9,      8,      7,      6,      5 },
     { NO_LED,     10,     11,     12,     13,     14 },
     { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED },
+
     {     25,     26,     27,     28,     29, NO_LED },
     {     24,     23,     22,     21,     20, NO_LED },
-    {     15,     16,     17,     18,     19, NO_LED }
+    {     15,     16,     17,     18,     19, NO_LED },
+    { NO_LED, NO_LED, NO_LED, NO_LED, NO_LED, NO_LED }
   }, {
   // LED Index to Physical Position
     {   0,   0 }, {  24,   0 }, {  49,   0 }, {  74,   0 }, {  99,   0 }, {  99,  21 }, {  74,  21 }, {  49,  21 }, {  24,  21 }, {   0,  21 },
