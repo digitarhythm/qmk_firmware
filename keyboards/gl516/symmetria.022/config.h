@@ -18,22 +18,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* key matrix size */
-#define MATRIX_ROWS 8
+#define MATRIX_ROWS 10
 #define MATRIX_COLS 7
 
 // wiring of each half
-#define MATRIX_ROW_PINS { D1, D0, D4, C6 }
+#define MATRIX_ROW_PINS { D1, D0, D4, C6, NO_PIN }
 #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2 }
 
 #define ENCODERS_PAD_A { D7, B4, D2 }
 #define ENCODERS_PAD_B { E6, B5, B6 }
-//#define ENCODER_DIRECTION_FLIP
-#define ENCODER_RESOLUTIONS { 4, 4, 4 }
+#define ENCODER_RESOLUTION 4
 #define ENCODER_DEFAULT_POS 0x3
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
-
-#define DEBOUNCE 50
