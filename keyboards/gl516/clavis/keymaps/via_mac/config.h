@@ -27,5 +27,3 @@
   #undef RGBLED_NUM
 #endif
 
-#define RGB_MATRIX_LED_COUNT 0
-
