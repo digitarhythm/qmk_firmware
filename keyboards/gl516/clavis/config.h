@@ -37,3 +37,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_RESYNC_ENABLE
 
 #define DEBOUNCE 50
+
+#define TAPPING_TERM 200
+#define HOLD_ON_OTHER_KEY_PRESS
+#define TAPPING_FORCE_HOLD
+#define GET_PERMISSIVE_HOLD
+//#define RETRO_TAPPING
+

@@ -16,14 +16,3 @@
 
 #pragma once
 
-/* Select hand configuration */
-
-#define TAPPING_TERM 200
-#define HOLD_ON_OTHER_KEY_PRESS
-#define TAPPING_FORCE_HOLD
-//#define RETRO_TAPPING
-
-#ifdef RGBLED_NUM
-  #undef RGBLED_NUM
-#endif
-
