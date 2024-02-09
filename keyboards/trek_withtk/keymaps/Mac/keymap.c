@@ -10,25 +10,25 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-        LGUI(KC_C),    LGUI(KC_V),       KC_VOLD,       KC_MUTE,       KC_VOLU,
-        LGUI(KC_Z),        KC_END,         KC_P7,         KC_P8,         KC_P9,
-                          KC_MUTE,         KC_P4,         KC_P5,         KC_P6,
+        LGUI(KC_D),       KC_MUTE,    LGUI(KC_X),    LGUI(KC_C),    LGUI(KC_V),
+           KC_HOME,        KC_END,         KC_P7,         KC_P8,         KC_P9,
+                            TG(1),         KC_P4,         KC_P5,         KC_P6,
                                            KC_P1,         KC_P2,         KC_P3,
-                                           KC_P0,       KC_PDOT,  LT(1,KC_ENT)
+                                           KC_P0,       KC_PDOT,  LT(2,KC_ENT)
   ),
   [1] = LAYOUT(
+           _______,       _______,       _______,       _______,       _______,
+           _______,       _______,       _______,       _______,       _______,
+                            TG(1),       _______,       _______,       _______,
+                                         _______,       _______,       _______,
+                                         _______,       _______,       _______
+  ),
+  [2] = LAYOUT(
            _______,       _______,       RGB_VAD,       RGB_VAI,       _______,
            _______,       _______,       RGB_HUD,       RGB_HUI,       _______,
                           _______,       RGB_SPD,       RGB_SPI,       _______,
                                          RGB_RMOD,      RGB_MOD,       _______,
                                          RGB_TOG,       _______,       _______
-  ),
-  [2] = LAYOUT(
-           _______,       _______,       _______,       _______,       _______,
-           _______,       _______,       _______,       _______,       _______,
-                          _______,       _______,       _______,       _______,
-                                         _______,       _______,       _______,
-                                         _______,       _______,       _______
   ),
   [3] = LAYOUT(
            _______,       _______,       _______,       _______,       _______,
@@ -74,7 +74,7 @@ led_config_t g_led_config = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-/* layer 0 */    [_BASE]   = { ENCODER_CCW_CW(LCTL(KC_PGUP), LCTL(KC_PGDN)), ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
+/* layer 0 */    [_BASE]   = { ENCODER_CCW_CW(LGUI(KC_MINS), LGUI(KC_PLUS)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_WH_D, KC_WH_U) },
 /* layer 1 */    [_LOWER]  = { ENCODER_CCW_CW(_______, _______),             ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
 /* layer 2 */    [_RAISE]  = { ENCODER_CCW_CW(_______, _______),             ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
 /* layer 3 */    [_ADJUST] = { ENCODER_CCW_CW(_______, _______),             ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) }
