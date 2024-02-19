@@ -1,0 +1,25 @@
+# Build Options
+#BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
+#MOUSEKEY_ENABLE = yes       # Mouse keys
+#EXTRAKEY_ENABLE = yes       # Audio control and System control
+#CONSOLE_ENABLE = no         # Console for debug
+#COMMAND_ENABLE = no         # Commands for debug and configuration
+#NKRO_ENABLE = no            # Enable N-Key Rollover
+#BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
+
+AUDIO_ENABLE = no           # Audio output
+
+GRAVE_ESC_ENABLE = yes
+
+VIA_ENABLE = yes
+
+SPACE_CADET_ENABLE = no
+MAGIC_ENABLE = no
+
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = yes
+
+CUSTOM_MATRIX = lite
+DEBOUNCE_TYPE = sym_eager_pk
+
+SRC += matrix.c
