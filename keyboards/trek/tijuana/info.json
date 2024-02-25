@@ -16,11 +16,11 @@
   },
   "rgb_matrix": {
     "driver": "ws2812",
-    "sleep": true,
+    "sleep": false,
     "max brightness ": 128,
-    "hue steps": 8,
-    "sat steps": 8,
-    "speed_steps": 8
+    "hue steps": 4,
+    "sat steps": 4,
+    "speed_steps": 4
   },
   "rgblight": {
     "led_count": 54,
@@ -38,16 +38,15 @@
   },
   "encoder": {
     "rotary": [
-      { "pin_a": "GP0",  "pin_b": "GP1",  "resolution": 4 },
-      { "pin_a": "GP9",  "pin_b": "GP10", "resolution": 4 },
-      { "pin_a": "GP11", "pin_b": "GP12", "resolution": 4 }
+      { "pin_a": "GP12",  "pin_b": "GP11",  "resolution": 4 },
+      { "pin_a": "GP10",  "pin_b": "GP9", "resolution": 4 },
+      { "pin_a": "GP7", "pin_b": "GP8", "resolution": 4 }
     ]
   },
-  "url": "",
   "usb": {
     "device_version": "1.0.0",
-    "pid": "0x516D",
-    "vid": "0x1209"
+    "vid": "0x1209",
+    "pid": "0x516D"
   },
   "layouts": {
     "LAYOUT_tijuana": {
@@ -79,8 +78,8 @@
         {"matrix":[3,4], "x":-1.57, "y":4.81},
         {"matrix":[3,5], "x":-1.57, "y":3.81},
         {"matrix":[3,6], "x":-0.57, "y":4.81},
-        {"matrix":[4,6], "x":-0.57, "y":0.8},
         {"matrix":[4,0], "x":-7.92, "y":4.4, "w":1.25, "h":1.25},
+        {"matrix":[4,6], "x":-0.57, "y":0.8},
         {"matrix":[5,0], "x":-0.57, "y":1.8},
         {"matrix":[5,1], "x":0.43, "y":1.8},
         {"matrix":[5,2], "x":1.43, "y":19.18},
