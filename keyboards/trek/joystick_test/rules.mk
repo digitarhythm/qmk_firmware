@@ -1,0 +1,9 @@
+JOYSTICK_ENABLE = yes
+JOYSTICK_DRIVER = analog
+
+#MOUSEKEY_ENABLE = yes
+#POINTING_DEVICE_ENABLE = yes
+#POINTING_DEVICE_DRIVER = analog_joystick
+
+SRC += analog.c
+
